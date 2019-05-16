@@ -1,8 +1,9 @@
-import {ProductsDAO} from "../daos/ProductDAO";
+import ProductsDAO from "../daos/ProductsDAO";
 import { log } from "../logger/logger";
 
+
 export default class ProductService{
-    private productDAO :ProductsDAO;
+    private productDAO :ProductsDAO;    
     constructor(){
         this.productDAO=new ProductsDAO();
     }
@@ -11,8 +12,9 @@ export default class ProductService{
         let result=await this.productDAO.findAll();
         return result;
     }
-    async getProductById(filter:any){        
-        return await this.productDAO.findByOne(filter);
+    async getProductById(filter:any){    
+        
+        return await this.productDAO.getRepository().findOne(filter);
     }
     async getProductsOrderById(){
         return await this.productDAO.findByOrder();

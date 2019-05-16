@@ -5,7 +5,7 @@ import Products  from "../entities/Products"
 
 
 export  default class ConnectToDB{
-    
+   
     public static local:any={
         name: "default",
         type: "postgres",

@@ -1,5 +1,6 @@
 import express, { response } from 'express';
-import AppRouter from "./Router"
+import AppRouter from "./Router";
+import { json } from "body-parser";
 
 
 export default class Express{
@@ -7,7 +8,8 @@ export default class Express{
     public router:any;
 
     constructor(){
-        this.expressobj=express();   
+        this.expressobj=express();  
+        this.expressobj.use(json()); 
         this.getRouting();        
     }
     async getRouting(){

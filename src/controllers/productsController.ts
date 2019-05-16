@@ -20,13 +20,11 @@ export default class ProductsController{
                 re=all;
             }else{
                 console.log("cahed data");                
-            }
-            
+            }                   
             return response.send(re);
         });
-        this.router.get("/findbyid",async (request:Request,response:Response)=>{
-            console.log("",request.originalUrl)   
-            let filterObj=request.query.id;console.log(request.query)
+        this.router.get("/findbyid",async (request:Request,response:Response)=>{             
+            let filterObj=request.query.id;
             let result=await this.productsService.getProductById(filterObj);
             return response.send(result);
         });
