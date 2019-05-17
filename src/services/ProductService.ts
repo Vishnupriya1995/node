@@ -3,7 +3,8 @@ import { log } from "../logger/logger";
 
 
 export default class ProductService{
-    private productDAO :ProductsDAO;    
+    private productDAO :ProductsDAO;   
+    public sessionInfo:any; 
     constructor(){
         this.productDAO=new ProductsDAO();
     }
